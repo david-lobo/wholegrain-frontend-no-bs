@@ -1,0 +1,408 @@
+@import 'normalize.css';
+/* ---------------------------------------------------------
+   HTML5 Bones
+   This stylesheet contains print styling and a section for 
+   you to simply add your own. This is a basic template 
+   after all.
+   ---------------------------------------------------------*/
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5em;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #00698F;
+}
+
+/* Default link styling */
+
+a:link {
+  color: #0271fb;
+}
+
+a:visited {
+  color: #bd02fb;
+}
+
+a:hover, a:focus {
+  color: #000;
+}
+
+a:active {
+  color: #fb0e02;
+}
+
+/* ---------------------------------------------------------
+   Author's styles
+   ---------------------------------------------------------*/
+/* Default Overrides */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.h1 {
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.h3 {
+  font-size: 2.25rem;
+}
+
+header {
+  background-color: #00698F;
+}
+
+/* Layout */
+
+.container {
+  padding: 0 15px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.header {
+  grid-column: span 12;
+}
+
+.hero-content {
+  grid-column: span 12;
+}
+
+.main-content {
+  grid-column: span 12;
+}
+
+section.hero, section.main, p.intro {
+  grid-column: span 12;
+}
+
+/* Custom Classes */
+
+p.intro {
+  margin: 3rem 0;
+}
+
+.card {
+  grid-column: span 12;
+  padding: 1.25rem 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.card .h3 {
+  margin-top: 1.25rem;
+}
+
+.card .card-text {
+  margin-bottom: 1rem;
+}
+
+.card .card-footer {
+  margin-top: auto;
+}
+
+.card a {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  background-color: #00698F;
+  color: white;
+  transition: all 0.5s ease;
+}
+
+.card a:hover {
+  opacity: 0.8;
+}
+
+.cards {
+  margin: 0 -15px;
+  grid-column: span 12;
+}
+
+.container .hero-content {
+  padding: 2rem 1rem;
+}
+
+section.main {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+section.hero {
+  background-color: #00698F;
+  color: white;
+  position: relative;
+  padding-bottom: 5vw;
+}
+
+section.hero svg {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 5vw;
+}
+
+.hero-content .h1, .main-content .h1 {
+  text-align: center;
+}
+
+/* Navigation Menu */
+nav {
+  background: #00698F;
+  height: 70px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+nav #brand {
+  float: none;
+  display: block;
+  font-weight: bold;
+}
+
+nav #brand a {
+  color: #fff;
+  transition: all 0.3s ease-out;
+}
+
+nav #brand a:hover {
+  color: #777777;
+}
+
+nav #menu {
+  float: none;
+  position: relative;
+}
+
+nav #menu li {
+  display: inline-block;
+  padding: 0px 30px;
+  cursor: pointer;
+  line-height: 70px;
+  position: relative;
+  transition: all 0.3s ease-out;
+}
+
+nav #menu li a {
+  color: #fff;
+}
+
+nav #menu li:hover {
+  background: #333;
+}
+
+#toggle {
+  margin-left: auto;
+  z-index: 999;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#toggle .span {
+  height: 5px;
+  background: #fff;
+  margin: 7px auto;
+  backface-visibility: hidden;
+}
+
+#toggle.on #one {
+  transform: rotate(45deg) translateX(6px) translateY(6px);
+}
+
+#toggle.on #two {
+  opacity: 0;
+}
+
+#toggle.on #three {
+  transform: rotate(-45deg) translateX(10px) translateY(-12px);
+}
+
+#resize {
+  z-index: 1;
+  position: absolute;
+  top: 0px;
+  background: #00698F;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+  display: table;
+}
+
+#resize #menu {
+  height: 50px;
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 0;
+}
+
+#resize #menu li {
+  display: block;
+  text-align: center;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 50px;
+  min-height: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+#resize #menu li:hover {
+  background: #00a8e6;
+}
+
+#resize #menu li:hover a {
+  color: #fff;
+  transition: all 0.3s ease-out;
+}
+
+#resize #menu li a {
+  color: white;
+  text-decoration: none;
+}
+
+#resize.active {
+  visibility: visible;
+  opacity: 0.99;
+}
+
+/* Extra small devices (phones, 600px and down) */
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .container .hero-content {
+    padding: 4rem 2rem;
+  }
+
+  .card {
+    grid-column: span 6;
+    margin-bottom: 3rem;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .card {
+    grid-column: span 4;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .hero-content .h1 {
+    text-align: right;
+  }
+
+  .main-content .h1 {
+    text-align: left;
+  }
+
+  .hero-content {
+    grid-column: 2/span 11;
+  }
+
+  .main-content {
+    grid-column: 1/span 11;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* Width can be adjusted to only display on mobile if needed */
+@media (max-width: 9999px) {
+  #toggle {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  nav #menu {
+    display: none;
+  }
+}
+
+/* Width can be adjusted to only display on mobile if needed */
+@media (min-width: 9999px) {
+  #resize {
+    visibility: hidden !important;
+  }
+}
+
+/* ---------------------------------------------------------
+   Print styles
+   ---------------------------------------------------------*/
+@media print {
+  * {
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    background: transparent !important;
+  }
+
+  html {
+    background-color: #fff;
+  }
+
+  /* Hide navigation */
+  nav {
+    display: none;
+  }
+
+  /* Show link destinations in brackets after the link text */
+  a[href]:after {
+    content: " (" attr(href) ") ";
+  }
+
+  a[href] {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #06c;
+    border: none;
+  }
+
+  /* Don't show link destinations for JavaScript or internal links */
+  a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: "";
+  }
+
+  /* Show abbr title value in brackets after the text */
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  figure {
+    margin-bottom: 1em;
+    overflow: hidden;
+  }
+
+  figure img {
+    border: 1px solid #000;
+  }
+}
